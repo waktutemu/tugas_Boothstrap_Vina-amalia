@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="id" data-bs-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio & CV - Vina Amalia</title>
+    
+    <!-- Bootstrap 5.3 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding-top: 80px;
+            margin-top: -20px;
+        }
+
+        /* Styling Light Mode */
+        [data-bs-theme="light"] body {
+            background-color: #79d7db;
+            color: #1e507c;
+        }
+        [data-bs-theme="light"] .hero-section {
+            background: linear-gradient(135deg, #225f74, #2f5778);
+            border-bottom: 4px solid #2c6b78;
+        }
+        [data-bs-theme="light"] .custom-card {
+            border: 1px solid #d4c5bd;
+            background-color: #ffffff;
+            color: #4a403a;
+        }
+        [data-bs-theme="light"] .table-custom {
+            background-color: #fdfbf7;
+        }
+
+        /* Styling Dark Mode */
+        [data-bs-theme="dark"] body {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+        [data-bs-theme="dark"] .hero-section {
+            background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
+            border-bottom: 4px solid #cf916e;
+        }
+        [data-bs-theme="dark"] .custom-card {
+            border: 1px solid #333333;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+        [data-bs-theme="dark"] .table-custom {
+            background-color: #1e1e1e !important;
+            color: #e0e0e0;
+        }
+        [data-bs-theme="dark"] .table-custom td, 
+        [data-bs-theme="dark"] .table-custom th {
+            color: #e0e0e0 !important;
+            border-color: #333333 !important;
+        }
+        [data-bs-theme="dark"] .table-light {
+            background-color: #242424 !important;
+        }
+        [data-bs-theme="dark"] .text-muted {
+            color: #a0a0a0 !important;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            object-fit: cover;
+            border: 4px solid #8c6d62;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transition: transform 0.4s ease;
+        }
+        @media (min-width: 768px) {
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                border: 5px solid #8c6d62;
+            }
+        }
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            color: #999c5a;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background-color: #cf916e;
+        }
+        .custom-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 12px;
+        }
+        .custom-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(140, 109, 98, 0.15);
+        }
+        .badge-custom {
+            background-color: #999c5a;
+            color: white;
+        }
+        footer {
+            background-color: #8c6d62;
+            color: white;
+        }
+
+        @media (max-width: 767.98px) {
+            .table {
+                font-size: 0.85rem;
+            }
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm" style="background-color: #8c6d62 !important;">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#"><i class="bi bi-person-badge me-2"></i>Vina Amalia</a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end text-center text-lg-start" id="navbarNav">
+                <ul class="navbar-nav align-items-lg-center py-2 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#biodata">Biodata</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Pendidikan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Keahlian</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#social">Sosial Media</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+                    <li class="nav-item ms-lg-3 mt-3 mt-lg-0 d-flex justify-content-center">
+                        <button id="themeToggleBtn" class="btn btn-sm btn-outline-light rounded-circle p-2" title="Ganti Tema">
+                            <i id="themeIcon" class="bi bi-moon-fill"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section py-5 text-center">
+        <div class="container px-3">
+            <h1 class="display-5 display-md-4 fw-bold mb-3" style="color: #999c5a !important;">~ My CV & Portofolio ~</h1>
+            <p class="lead text-muted fs-6 fs-md-5">Mahasiswa Sistem Informasi | Editor</p>
+        </div>
+    </header>
+
+    <main class="container my-4 my-md-5 px-3 px-md-4">
+
+        <section id="biodata" class="mb-5">
+            <div class="row align-items-center justify-content-center g-4">
+                <div class="col-lg-4 text-center mb-2 mb-lg-0">
+                    <img src="foto.jpeg" alt="Foto Profil Vina" class="rounded-circle profile-img mb-3" onerror="this.src='https://via.placeholder.com/200?text=Foto+Profil'">
+                    <h4 class="fw-bold text-danger">Vina Amalia</h4>
+                    <span class="badge badge-custom">Sistem Informasi S1</span>
+                </div>
+                <div class="col-lg-7">
+                    <div class="card custom-card p-3 p-md-4 shadow-sm">
+                        <h3 class="section-title mb-4">Biodata Diri</h3>
+                        <ul class="list-unstyled mb-0 lh-lg">
+                            <li class="d-flex flex-column flex-sm-row mb-2">
+                                <span class="fw-bold text-danger" style="min-width: 180px;"><i class="bi bi-person-fill me-2"></i>Nama Lengkap:</span> 
+                                <span>Vina Amalia</span>
+                            </li>
+                            <li class="d-flex flex-column flex-sm-row mb-2">
+                                <span class="fw-bold text-danger" style="min-width: 180px;"><i class="bi bi-card-heading me-2"></i>NIM:</span> 
+                                <span>2512500410</span>
+                            </li>
+                            <li class="d-flex flex-column flex-sm-row mb-2">
+                                <span class="fw-bold text-danger" style="min-width: 180px;"><i class="bi bi-geo-alt-fill me-2"></i>TTL:</span> 
+                                <span>Bogor, 08 Desember 2006</span>
+                            </li>
+                            <li class="d-flex flex-column flex-sm-row mb-2">
+                                <span class="fw-bold text-danger" style="min-width: 180px;"><i class="bi bi-envelope-fill me-2"></i>Email Aktif:</span> 
+                                <i>vinamalia88@gmail.com</i>
+                            </li>
+                            <li class="d-flex flex-column flex-sm-row mb-2">
+                                <span class="fw-bold text-danger" style="min-width: 180px;"><i class="bi bi-phone-fill me-2"></i>No. Handphone:</span> 
+                                <span>085772599164</span>
+                            </li>
+                            <li class="d-flex flex-column flex-sm-row">
+                                <span class="fw-bold text-danger" style="min-width: 180px;"><i class="bi bi-shield-check me-2"></i>Agama:</span> 
+                                <span>Islam</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5 text-muted">
+
+        <section id="about" class="mb-5">
+            <h2 class="section-title mb-4">About Me</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card custom-card p-4 h-100">
+                        <h4 class="text-danger mb-3"><i class="bi bi-heart-fill me-2"></i>Yang Saya Sukai:</h4>
+                        <ol class="ps-3 mb-0">
+                            <li class="mb-2"><b>Saya selalu aktif dalam berorganisasi.</b></li>
+                            <li class="mb-0"><b>Selama sekolah di jenjang MA, aktif dalam dunia <i>editor</i>.</b></li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card custom-card p-4 h-100">
+                        <h4 class="text-danger mb-3"><i class="bi bi-star-fill me-2"></i>Kelebihan Saya:</h4>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item bg-transparent ps-0"><i class="bi bi-check2-circle text-success me-2"></i> Mudah Beradaptasi</li>
+                            <li class="list-group-item bg-transparent ps-0"><i class="bi bi-check2-circle text-success me-2"></i> Komunikatif</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="education" class="mb-5">
+            <h2 class="text-center text-danger fw-bold mb-4 fs-3 fs-md-2">~~~ RIWAYAT PENDIDIKAN ~~~</h2>
+            <div class="table-responsive shadow-sm rounded">
+                <table class="table table-hover table-custom align-middle mb-0">
+                    <thead style="background-color: #8c6d62; color: white;">
+                        <tr>
+                            <th class="text-center py-3">Tahun</th>
+                            <th class="py-3">Nama Sekolah / Perguruan Tinggi</th>
+                            <th class="py-3">Jurusan</th>
+                            <th class="text-center py-3">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-center fw-bold">2025 - Sekarang</td>
+                            <td>Universitas Budi Luhur</td>
+                            <td>Sistem Informasi (S1)</td>
+                            <td class="text-center"><span class="badge bg-success">Semester 3</span></td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="text-center fw-bold">2022 - 2025</td>
+                            <td>MA TANWIRIYYAH</td>
+                            <td>Mipa</td>
+                            <td class="text-center"><span class="badge bg-secondary">LULUS</span></td>
+                        </tr>
+                        <tr>
+                            <td class="text-center fw-bold">2019 - 2022</td>
+                            <td>SMP Mafazah</td>
+                            <td>-</td>
+                            <td class="text-center"><span class="badge bg-secondary">LULUS</span></td>
+                        </tr>
+                        <tr class="table-light">
+                            <td class="text-center fw-bold">2013 - 2019</td>
+                            <td>MI Darul Mustaqiem</td>
+                            <td>-</td>
+                            <td class="text-center"><span class="badge bg-secondary">LULUS</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <hr class="my-5 text-muted">
+
+        <section id="skills" class="mb-5">
+            <h2 class="section-title mb-4">Keahlian dan Kemampuan Saya</h2>
+            <h4 class="text-danger mb-4 fs-5">Yang saya bisa dan masih saya pelajari:</h4>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card custom-card p-4 h-100">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-laptop me-2 text-warning"></i>Editing</h5>
+                        <ul class="list-unstyled ps-2 mb-0">
+                            <li class="mb-2"><i class="bi bi-caret-right-fill text-danger"></i> Capcut</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill text-danger"></i> Canva</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card custom-card p-4 h-100">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-translate me-2 text-primary"></i>Bahasa</h5>
+                        <ul class="list-unstyled ps-2 mb-0">
+                            <li class="mb-2"><i class="bi bi-caret-right-fill text-danger"></i> Bahasa Indonesia (Aktif)</li>
+                            <li class="mb-2"><i class="bi bi-caret-right-fill text-danger"></i> Bahasa Inggris (Intermediate)</li>
+                            <li class="mb-0"><i class="bi bi-caret-right-fill text-danger"></i> Bahasa Arab (Basic)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="social" class="mb-5">
+            <h2 class="text-center text-warning fw-bold mb-4 fs-3">Akun Sosial Media Saya</h2>
+            <div class="row justify-content-center g-4">
+                <div class="col-md-4">
+                    <div class="card custom-card text-center p-4 h-100">
+                        <div><img src="https://img.icons8.com/color/48/instagram-new--v1.png" width="45" height="45" alt="Instagram"></div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">Instagram</h5>
+                            <a href="https://www.instagram.com/vinamalia2?utm_source=ig_web_button_share_sheet&obrf=ZDNlZDc0MzIxNw==" target="_blank" class="text-decoration-none fw-bold" style="color: #b53873; font-size: 1.05rem;">@vinamalia2</a>
+                            <p class="card-text text-muted small mt-2">Instagram Pribadi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card custom-card text-center p-4 h-100">
+                        <div><img src="https://img.icons8.com/color/48/tiktok.png" width="45" height="45" alt="TikTok"></div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">TikTok</h5>
+                            <a href="https://www.tiktok.com/@amliavna?is_from_webapp=1&sender_device=pc" target="_blank" class="text-decoration-none fw-bold" style="font-size: 1.05rem;">@amliavna</a>
+                            <p class="card-text text-muted small mt-2">TikTok Pribadi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card custom-card text-center p-4 h-100">
+                        <div><img src="https://img.icons8.com/color/48/youtube.png" width="45" height="45" alt="YouTube"></div>
+                        <div class="card-body">
+                            <h5 class="card-title fw-bold">YouTube</h5>
+                            <a href="https://youtube.com/@vinaamalia-k3e?si=MKaGPn7iIEK-5QL-" target="_blank" class="text-decoration-none fw-bold" style="color: #c4302b; font-size: 1.05rem;">@vinaamalia</a>
+                            <p class="card-text text-muted small mt-2">Channel / Youtube Pribadi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mb-5">
+            <div class="card custom-card p-3 p-md-5">
+                <h2 class="section-title mb-4 text-center">Kirim Pesan / Kontak</h2>
+                <form onsubmit="handleSubmit(event)">
+                    <div class="row g-3">
+                        <div class="col-md-6 mb-2">
+                            <label for="nama" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama" required placeholder="Masukkan nama Anda">
+                        </div>
+                        <div class="col-md-6 mb-2">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required placeholder="nama@email.com">
+                        </div>
+                    </div>
+                    <div class="mb-3 mt-3">
+                        <label for="pesan" class="form-label">Pesan</label>
+                        <textarea class="form-control" id="pesan" rows="4" required placeholder="Tuliskan pesan atau tawaran kerja sama di sini..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-dark px-5 py-2" style="background-color: #8c6d62; border-color: #8c6d62;">Kirim Pesan</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-4">
+        <div class="container px-3">
+            <p class="mb-0 small">&copy; 2026 Vina Amalia. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        const htmlElement = document.documentElement;
+        const themeToggleBtn = document.getElementById('themeToggleBtn');
+        const themeIcon = document.getElementById('themeIcon');
+
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        htmlElement.setAttribute('data-bs-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const currentTheme = htmlElement.getAttribute('data-bs-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            htmlElement.setAttribute('data-bs-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'bi bi-sun-fill text-warning';
+            } else {
+                themeIcon.className = 'bi bi-moon-fill';
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            alert('Terima kasih! Pesan Anda telah berhasil dikirim kepada Vina Amalia.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
